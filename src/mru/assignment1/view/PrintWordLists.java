@@ -28,7 +28,7 @@ public class PrintWordLists {
 		System.out.println("10 Most Frequent");
 		for(Token wordToCheck: wordList) {
 			if(i <= 10) {
-				System.out.println(i + ". " + wordToCheck.getWord() + " : " + wordToCheck.getIndividualWordCount());
+				System.out.println(wordToCheck.getWord() + " : " + wordToCheck.getIndividualWordCount());
 				i++;
 			}
 		}
@@ -41,7 +41,7 @@ public class PrintWordLists {
 		System.out.println("10 Least Frequent");
 		for(Token wordToCheck: wordList) {
 			if(i <= 10) {
-				System.out.println(i + ". " + wordToCheck.getWord() + " : " + wordToCheck.getIndividualWordCount());
+				System.out.println(wordToCheck.getWord() + " : " + wordToCheck.getIndividualWordCount());
 				i++;
 			}
 		}
@@ -51,9 +51,9 @@ public class PrintWordLists {
 		int i = 1;
 
 		System.out.println();
-		System.out.println("All Words");
+		System.out.println("All");
 		for(Token wordToCheck: wordList) {
-			System.out.println(i + ". " + wordToCheck.getWord() + " : " + wordToCheck.getIndividualWordCount());
+			System.out.println(wordToCheck.getWord() + " : " + wordToCheck.getIndividualWordCount());
 			i++;
 		}
 	}

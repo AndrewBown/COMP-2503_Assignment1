@@ -3,8 +3,10 @@ package mru.assignment1.control;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 import mru.assignment1.model.Token;
+import mru.assignment1.sorting.*;
 import mru.assignment1.view.PrintWordLists;
 
 public class A1 {
@@ -16,7 +18,6 @@ public class A1 {
 	private int totalWordCount;
 	private int stopWordWordCount;
 	private int uniqueWordCount;
-
 
 	
 	
@@ -59,12 +60,13 @@ public class A1 {
 		printWords.uniqueWordCount(uniqueWordCount);
 		printWords.stopWordCount(stopWordWordCount);
 
-		//Colections to sort the list
+		Collections.sort(wordList, new mostUsedWords());
 		printWords.mostUsedWords(wordList);
 
-		//New Collections to sort the list
+		Collections.sort(wordList, new LeastUsedWords());
 		printWords.leastUsedWords(wordList);
 		
+		Collections.sort(wordList);
 		printWords.allWords(wordList);
 	}
 		

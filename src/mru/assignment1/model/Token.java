@@ -29,9 +29,8 @@ public class Token implements Comparable<Token>{
 	}
 	
 	public int compareTo(Token t) {
-
-		return 0;
-	}
+        return this.word.compareTo(t.word);
+    }
 		
 	public String getWord() {
 		return word;
