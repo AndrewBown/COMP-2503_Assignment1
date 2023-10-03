@@ -9,6 +9,11 @@ import mru.assignment1.model.Token;
 import mru.assignment1.sorting.*;
 import mru.assignment1.view.PrintWordLists;
 
+
+/**
+ * This class is the main class for the program. It reads in the file and then
+ * calls the methods to print the results.
+ */
 public class A1 {
 	private Scanner fileReader;
 	private File text;
@@ -18,12 +23,13 @@ public class A1 {
 	private int totalWordCount;
 	private int stopWordWordCount;
 	private int uniqueWordCount;
-
-	
-	
 	private final String FILE_PATH = "res/input.txt";
 
 	
+	/**
+	 * Constructor for the A1 class. It initializes the fileReader, printWords, wordList, and stopWords.
+	 * It also reads in the file.
+	 */
 	public A1() {
 		fileReader = new Scanner(System.in);
 		printWords = new PrintWordLists();
@@ -45,7 +51,11 @@ public class A1 {
 		}
 	}
 	
-	
+	/**
+	 * Main method for the program. It creates an instance of the A1 class and then calls the checkWords method, and then the printResults mehod.
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
 		A1 A1Manager = new A1();
 		A1Manager.checkWords();
