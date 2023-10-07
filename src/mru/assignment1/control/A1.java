@@ -64,7 +64,9 @@ public class A1 {
 		A1Manager.printResults();
 	}
 
-
+	/**
+	 * This method calls the print methods from the PrintWordLists class.
+	 */
 	public void printResults() {
 		printWords.totalWordCount(totalWordCount);
 		printWords.uniqueWordCount(uniqueWordCount);
@@ -80,14 +82,16 @@ public class A1 {
 		printWords.allWords(wordList);
 	}
 		
-
+	/**
+	 * This method reads the file and checks each word. For each word it updates the totalWordCount, stopWordWordCount, and uniqueWordCount
+	 */
     public void checkWords() {
 		ArrayList<String> allWordsString = new ArrayList<String>();
 		ArrayList<Token> allWordsToken = new ArrayList<Token>();
 
     	while(fileReader.hasNextLine()) {
 			String currLine = fileReader.nextLine().strip().toLowerCase().replaceAll("[^A-Za-z ]", "").replaceAll("\s+", " "); 		// used https://stackoverflow.com/questions/7233447/a-regex-to-match-strings-with-alphanumeric-spaces-and-punctuation for help with regex
-			if(!(currLine.equals(""))) {
+		if(!(currLine.equals("") || currLine.equals(" "))) {
 				for(String individualWordsInLine: currLine.strip().split(" ")) {
 					Token word;
 					word = new Token(individualWordsInLine, totalWordCount, stopWordWordCount, uniqueWordCount); 
